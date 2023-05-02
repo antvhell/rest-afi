@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fuentes */
+@font-face {
+  font-family: CharisSILWNormal;
+  /* src: url(../../assets/fonts/CharisSIL-R.ttf); */
+  src: url(../fonts/CharisSIL-R.ttf);
+}
+
+@font-face {
+  font-family: CharisSILWItalic;
+  font-style: italic;
+  src: url(../fonts/CharisSIL-I.ttf);
+}
+
+@font-face {
+  font-family: CharisSILWBold;
+  font-weight: bold;
+  src: url(../fonts/CharisSIL-BI.ttf);
+}
+
+@font-face {
+  font-family: CharisSILWBolItalic;
+  font-weight: bold;
+  font-style: italic;
+  src: url(../fonts/CharisSIL-B.ttf);
+}
+
+.simbol {
+  font-family: CharisSILWNormal, sans-serif;
+  font-weight: normal;
+}

@@ -74,7 +74,7 @@ const autenticar = async (req, res) => {
       // secure: true,
       // sameSite: true,
     })
-    .redirect("/mis-propiedades");
+    .redirect("/home");
 };
 
 const formularioRegistro = (req, res) => {
@@ -188,7 +188,7 @@ const confirmar = async (req, res) => {
 
 const formularioOlvidePassword = (req, res) => {
   res.render("auth/olvide-password", {
-    pagina: "Recupera tu acceso al AFI",
+    pagina: "Recupera tu acceso a la Guía Práctica de Fonética",
     csrfToken: req.csrfToken(),
   });
 };
@@ -205,7 +205,7 @@ const resetPassword = async (req, res) => {
   if (!resultado.isEmpty()) {
     //Errores
     return res.render("auth/olvide-password", {
-      pagina: "Recupera tu acceso al AFI",
+      pagina: "Recupera tu acceso a la Guía Práctica de Fonética",
       csrfToken: req.csrfToken(),
       errores: resultado.array(),
     });
@@ -217,7 +217,7 @@ const resetPassword = async (req, res) => {
 
   if (!usuario) {
     return res.render("auth/olvide-password", {
-      pagina: "Recupera tu acceso al AFI",
+      pagina: "Recupera tu acceso a la Guía Práctica de Fonética",
       csrfToken: req.csrfToken(),
       errores: [{ msg: "EL Email no Pertenece a ningún usuario" }],
     });

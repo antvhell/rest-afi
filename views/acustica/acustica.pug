@@ -1,0 +1,40 @@
+
+extends ../layout/index
+
+block contenido
+    div.py-10
+        h1.text-4xl.my-10 Acústica
+            //- span.font-normal Fónetica
+        //- h2.text-center.text.text-2xl= pagina
+    .mb-4.border-b.border-gray-200(class='dark:border-gray-700')
+        ul#myTab.flex.flex-wrap.-mb-px.text-sm.font-medium.text-center(data-tabs-toggle='#myTabContent' role='tablist')
+            li.mr-2(role='presentation')
+            button#profile-tab.inline-block.p-4.border-b-2.rounded-t-lg(data-tabs-target='#profile' type='button' role='tab' aria-controls='profile' aria-selected='false') Profile
+            li.mr-2(role='presentation')
+            button#dashboard-tab.inline-block.p-4.border-b-2.border-transparent.rounded-t-lg(class='hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' data-tabs-target='#dashboard' type='button' role='tab' aria-controls='dashboard' aria-selected='false') Dashboard
+            li.mr-2(role='presentation')
+            button#settings-tab.inline-block.p-4.border-b-2.border-transparent.rounded-t-lg(class='hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' data-tabs-target='#settings' type='button' role='tab' aria-controls='settings' aria-selected='false') Settings
+            li(role='presentation')
+            button#contacts-tab.inline-block.p-4.border-b-2.border-transparent.rounded-t-lg(class='hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' data-tabs-target='#contacts' type='button' role='tab' aria-controls='contacts' aria-selected='false') Contacts
+        #myTabContent
+            #profile.hidden.p-4.rounded-lg.bg-gray-50(class='dark:bg-gray-800' role='tabpanel' aria-labelledby='profile-tab')
+                p.text-sm.text-gray-500(class='dark:text-gray-400')
+                | This is some placeholder content the 
+                strong.font-medium.text-gray-800(class='dark:text-white') Profile tab&apos;s associated content
+                | . Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.
+            #dashboard.hidden.p-4.rounded-lg.bg-gray-50(class='dark:bg-gray-800' role='tabpanel' aria-labelledby='dashboard-tab')
+                p.text-sm.text-gray-500(class='dark:text-gray-400')
+                | This is some placeholder content the 
+                strong.font-medium.text-gray-800(class='dark:text-white') Dashboard tab&apos;s associated content
+                | . Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.
+            #settings.hidden.p-4.rounded-lg.bg-gray-50(class='dark:bg-gray-800' role='tabpanel' aria-labelledby='settings-tab')
+                p.text-sm.text-gray-500(class='dark:text-gray-400')
+                | This is some placeholder content the 
+                strong.font-medium.text-gray-800(class='dark:text-white') Settings tab&apos;s associated content
+                | . Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.
+            #contacts.hidden.p-4.rounded-lg.bg-gray-50(class='dark:bg-gray-800' role='tabpanel' aria-labelledby='contacts-tab')
+                p.text-sm.text-gray-500(class='dark:text-gray-400')
+                | This is some placeholder content the 
+                strong.font-medium.text-gray-800(class='dark:text-white') Contacts tab&apos;s associated content
+                | . Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.
+

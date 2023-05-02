@@ -1,0 +1,72 @@
+extends ../layout/index
+
+block contenido
+    div.py-10
+        h1.text-4xl.my-10 AFI - Alfabeto Fonético Internacional.
+            //- span.font-normal Fónetica
+        //- h2.text-center.text.text-2xl= pagina
+        
+        include ../afi/blocks/menu-consonantes.pug
+       
+        h5 Clics
+        .btn-toolbar.justify-content-between(role='toolbar', aria-label='Toolbar with button groups')
+            .btn-group.mr-2(role='group', aria-label='First group')
+            audio#player90(src='assets/sounds/clic-bilabial.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player90').play()") ʘ
+
+
+            audio#player199(src='assets/sounds/dental-clic.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Dental', onclick="document.getElementById('player199').play()")  ǀ
+
+            audio#player91(src='assets/sounds/clic-alveolar.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player91').play()") ǃ
+
+            audio#player196(src='assets/sounds/palatal-clic.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Palatoalveolar',onclick="document.getElementById('player196').play()") ǂ
+
+            audio#player200(src='assets/sounds/lateral-clic.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Lateral alveolar',onclick="document.getElementById('player200').play()") ǁ
+        h5.mt-4 Implosivas sonoras
+        .btn-toolbar.justify-content-between(role='toolbar', aria-label='Toolbar with button groups')
+            .btn-group.mr-2(role='group', aria-label='First group')
+            audio#player194(src='assets/sounds/canto-implosiva.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player194').play()") ɓ
+
+            audio#player94(src='assets/sounds/ada-embera-implosiva.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player94').play()") ɗ
+
+                button.btn.botones(type='button', title='Palatal') ʄ
+                button.btn.botones(type='button', title='Velar') ɠ
+                button.btn.botones(type='button', title='Uvular') ʛ
+        h5.mt-4 Glotalizadas
+        .btn-toolbar.justify-content-between(role='toolbar', aria-label='Toolbar with button groups')
+            .btn-group.mr-2(role='group', aria-label='First group')
+            audio#player98(src='assets/sounds/tsotsil-bonito.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='', onclick="document.getElementById('player98').play()")  pˀ
+            
+                
+            audio#player101(src='assets/sounds/se-revento.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player101').play()") tˀ
+            
+
+            audio#player80(src='assets/sounds/sangre-maya.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player80').play()") kˀ
+            
+            audio#player81(src='assets/sounds/ocuil-comida.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda "Generosidad del Profesor Didier Demolin"', onclick="document.getElementById('player81').play()") ʦˀ
+
+            audio#player121(src='assets/sounds/caer-tsotsil.wav')
+            button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda"', onclick="document.getElementById('player121').play()") ʧˀ
+            
+                button.btn.botones(type='button', title='Fricativa alveolar') sˀ
+        .row.mt-4
+            .col
+            a(href='../../afi.html')
+                button.btn.btn-outline-danger.mt-4(type='button')
+                    svg.bi.bi-arrow-left-short(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor', viewbox='0 0 16 16')
+                    path(fill-rule='evenodd', d='M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z')
+                    | Regresar
+        .row
+            .col-12.mt-5
+            .alert.alert-dark(role='alert')
+                |<span class="text-charis">[ ʘ</span> <span class="text-charis">ǃ ]</span> <span class="text-charis"></span> Cortesia del Profesor Didier Demolin

@@ -1,0 +1,450 @@
+extends ../layout/index
+
+block contenido
+
+  div.py-10
+      h1.text-4xl.my-10 AFI - Alfabeto Fonético Internacional.
+      button.bg-blue-500.text-white.rounded-md.px-4.py-2.transition(class='hover:bg-blue-700' onclick="openModal('modal')") Open modal
+
+
+      #modal.fixed.hidden.z-50.inset-0.bg-gray-900.bg-opacity-60.overflow-y-auto.h-full.w-full.px-4.modal
+        .relative.top-40.mx-auto.shadow-xl.rounded-md.bg-white.max-w-md
+          // Modal header
+          .flex.justify-between.items-center.bg-green-500.text-white.text-xl.rounded-t-md.px-4.py-2
+            h3 Modal header
+            button(onclick="closeModal('modal')") x
+          // Modal body
+          .max-h-48.overflow-y-scroll.p-4
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+            p Scrollable modal body
+          // Modal footer
+          .px-4.py-2.border-t.border-t-gray-500.flex.justify-end.items-center.space-x-4
+
+          //- span.font-normal Fónetica
+      //- h2.text-center.text.text-2xl= pagina
+      include ../afi/blocks/menu-consonantes.pug
+
+
+  .flex.flex-col
+    .overflow-x-auto(class='sm:mx-0.5 lg:mx-0.5')
+      .py-2.inline-block.min-w-full(class='sm:px-6 lg:px-8')
+        .overflow-hidden
+          table.min-w-full
+            thead.bg-white.border-b
+              tr
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | 
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Bilabial
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Labiodental
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Interdental
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Alveolar
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Postalveolar
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Retrofleja
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Palatal
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Velar
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Uvular
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Faríngea
+                th(colspan='2').text-sm.font-extrabold.text-gray-900.px-6.py-4.text-left(scope='col')
+                  | Glotal
+                  
+            //- Oclusivas
+            tbody.text-center
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Oclusiva
+                td
+                td
+                  audio#player
+                    source(src='../../public/sounds/grito-mina.wav' type="audio/mpeg")
+                  button#playerBtn(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva bilabial sorda') p
+                td
+                  audio#player1
+                    source(src='../../public/sounds/Tlapaneco-vibora.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva bilabial sonora', onclick="document.getElementById('player1').play()") b
+                td
+                td
+                td
+                td
+                td
+                  audio#player2(source src='assets/sounds/Tlapaneco_olote.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white  t-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva alveolar sorda', onclick="document.getElementById('player2').play()") t
+                td
+                  audio#player3(src='assets/sounds/yoruba_lenguaje.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva alveolar sonora', onclick="document.getElementById('player3').play()") d
+                td
+                td
+                td
+                  audio#player4(src='assets/sounds/Bengali_harina.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white up 1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva retrofleja sorda', onclick="document.getElementById('player4').play()") ʈ
+                td
+                  audio#player5(src='assets/sounds/Bengali_convivir.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva retrofleja sonora', onclick="document.getElementById('player5').play()") ɖ
+                td
+                  audio#player6(src='assets/sounds/Popoluca_lengua.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva palatal sorda', onclick="document.getElementById('player6').play()") c
+                td
+                  a ɟ
+                td
+                  audio#player8(src='assets/sounds/tigre-zoque.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva velar sorda', onclick="document.getElementById('player8').play()") k
+                td
+                  audio#player9(src='assets/sounds/Tlapa_tu_garganta.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva velar sonora', onclick="document.getElementById('player9').play()") ɡ
+                td
+                  audio#player10(src='assets/sounds/Tot_hace_mucho.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva uvular sorda', onclick="document.getElementById('player10').play()") q
+                td
+                  audio#player11(src='assets/sounds/Tot_tipo de pajaro.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva uvular sonora', onclick="document.getElementById('player11').play()") ɢ
+                td
+                td
+                td
+                  audio#player12(src='assets/sounds/Tot_este.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Oclusiva glotal sorda', onclick="document.getElementById('player12').play()") ʔ
+                td
+              //- Fin de Oclusivas
+              
+              //- Africada
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Africada
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                  //- audio#player13(src='assets/sounds/Tep_mujer.wav')
+                  audio#player13(src='assets/sounds/pitahaya-huasteco.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white u -1 inline-block  sm:w-auto simbol")(type='button', title='Africada alveolar sorda', onclick="document.getElementById('player13').play()") ʦ
+                td ʣ
+                td
+                  audio#player54(src='assets/sounds/morder-tlahuica.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white u -1 inline-block  sm:w-auto simbol")(type='button', title='Africada alveolar sorda', onclick="document.getElementById('player54').play()") ʧ
+                
+                td
+                  audio#player14(src='assets/sounds/yoruba_perro.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Africada postalveolar sonora', onclick="document.getElementById('player14').play()") ʤ
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+              //- Fin de Africada
+
+              //- Fricativas
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Fricativa
+                td
+                td
+                  a ɸ
+                td
+                  audio#player16(src='assets/sounds/no-huasteco.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sorda', onclick="document.getElementById('player16').play()") β
+                td
+                  audio#player118(src='assets/sounds/mina-pie.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white upp  inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sorda', onclick="document.getElementById('player118').play()") f
+                td
+                  audio#player117(src='assets/sounds/dos-mina.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sorda', onclick="document.getElementById('player117').play()") v
+                td
+                  audio#player137(src='assets/sounds/Hace.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white upp  inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sorda', onclick="document.getElementById('player137').play()") θ
+                  //- a θ
+                td
+                  a ð
+                td
+                  audio#player32(src='assets/sounds/Tep_la_pelea.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white upp  inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sorda', onclick="document.getElementById('player32' ).play()") s
+                td
+                  audio#player33(src='assets/sounds/cacerola-mina.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa alveolar sonora', onclick="document.getElementById('player33').play()") z
+                td
+                  //- audio#player34(src='assets/sounds/Tep_jabon.wav')
+                  audio#player34(src='assets/sounds/empujar-tlahuica.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white upperc line-block  sm:w-auto simbol")(type='button', title='Fricativa postalveolar sorda', onclick="document.getElementById('player34').play()") ʃ
+                td
+                  audio#player134(src='assets/sounds/Jugete-frances.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa postalveolar sorda', onclick="document.getElementById('player134').play()") ʒ
+                  //- a ʒ
+                td
+                  a ʂ
+                td
+                  a ʐ
+                td
+                  audio#player35(src='assets/sounds/ocuilteco-ver.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white u -1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa palatal sorda', onclick="document.getElementById('player35').play()") ç
+                td
+                  audio#player36(src='assets/sounds/luna-yoruba.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa palatal sonora', onclick="document.getElementById('player36').play()") ʝ
+                td
+                  audio#player40(src='assets/sounds/Kiliwa_agua.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa velar sorda', onclick="document.getElementById('player40').play()") x
+                td
+                  audio#player41(src='assets/sounds/aqui-nawa.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa velar sorda', onclick="document.getElementById('player41').play()") ɣ
+                td
+                  //- audio#player42(src='assets/sounds/Tep_lejos.wav')
+                  audio#player42(src='assets/sounds/aguacate-mam.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white uppe inline-block  sm:w-auto simbol")(type='button', title='Fricativa uvular sorda', onclick="document.getElementById('player42').play()") &chi;
+                td
+                  audio#player143(src='assets/sounds/Arabe_fricativa_uvular_sonora.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa uvular sonora', onclick="document.getElementById('player143').play()") ʁ
+                td
+                  audio#player145(src='assets/sounds/Arabe_Fricativa_faringea_sorda.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white upp  inline-block  sm:w-auto simbol")(type='button', title='fricativa faríngea sorda', onclick="document.getElementById('player145').play()") ħ
+                td
+                  audio#player147(src='assets/sounds/Arabe_Fric_faringea_sonora.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa faríngea sonora', onclick="document.getElementById('player147').play()") ʕ
+                td
+                  audio#player146(src='assets/sounds/Popoluca_zancudo.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white u -1 inline-block  sm:w-auto simbol")(type='button', title='Fricativa glotal sorda', onclick="document.getElementById('player146').play()") h
+                td
+                  a ɦ
+                //- Fin de fricativas
+
+                //- Inicio de fricativas laterales
+
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Fricativa lateral
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                  //- audio#player48(src='assets/sounds/Tep_hoja _de _papel.wav')
+                  audio#player48(src='assets/sounds/tot-duro-recortado.wav')
+                  button(class="rounded py-2 px-3 bg-sky-600 hover:bg-sky-700 text-md font-bold text-center text-white inline-block  sm:w-auto simbol")(type='button', title='Fricativa lateral alveolar sorda', onclick="document.getElementById('player48').play()") ɬ
+                td ɮ
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                //- Fin de fricativas laterales
+              
+                //- Nasal
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Nasal
+                td
+                td
+                td
+                  audio#player49(src='assets/sounds/abuelo-tenek.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Nasal bilabial sonora', onclick="document.getElementById('player49').play()") m
+                
+                td
+                td
+                  audio#player149(src='assets/sounds/yoruba_el_esta_saltando.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Nasal labiodental sonora', onclick="document.getElementById('player149').play()") ɱ
+                td
+                td
+                td
+                td
+                  audio#player15(src='assets/sounds/Tot_alli.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Nasal alveolar sonora', onclick="document.getElementById('player15').play()") n
+                td
+                td
+                td
+                td
+                  a ɳ
+
+                td
+                td
+                  audio#player17(src='assets/sounds/wolof-dos.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Nasal palatal sonora', onclick="document.getElementById('player17').play()") ɲ
+
+                td
+                td
+                  audio#player18(src='assets/sounds/nasal-velar-afi.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Nasal palatal sonora', onclick="document.getElementById('player18').play()") ŋ
+                td
+                td
+                  a ɴ
+                td
+                td
+                td
+                td
+                //- Fin de nasales
+
+
+                //- Inicio de Vibrante múltiple
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Vibrante múltiple
+                td
+                td
+                td
+                  audio#player20(src='assets/sounds/vibrante-bilabial.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante múltiple bilabial sonora', onclick="document.getElementById('player20').play()") ʙ
+                td
+                td
+                td
+                td
+                td
+                td
+                  audio#player21(src='assets/sounds/sangre.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante múltiple alveolar sonora', onclick="document.getElementById('player21').play()") r
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                  audio#player221(src='assets/sounds/Raro-frances.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante múltiple alveolar sonora', onclick="document.getElementById('player221').play()") ʀ
+                
+                td
+                td
+                td
+                td
+                //- Fin de Vibrante múltiple
+
+                //- Inicio de Vibrante simple
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Vibrante simple
+                td
+                td
+                td
+                td
+                td
+                  audio#player23(src='assets/sounds/vibrante-simple-labiodental.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante múltiple alveolar sonora', onclick="document.getElementById('player23').play()") ⱱ
+                td
+                td
+                td
+                td
+                  audio#player24(src='assets/sounds/Popoloca_mano.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante simple alveolar sonora', onclick="document.getElementById('player24').play()") ɾ
+                td
+                td
+                td
+                td
+                  audio#player25(src='assets/sounds/Bengali_bahia.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Vibrante simple retrofleja sonora', onclick="document.getElementById('player25').play()") ɽ
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                //- Fin de Vibrante simple
+
+                //- Inicio de Aproximante
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Aproximante
+                td
+                td
+                td
+                td
+                td
+                  audio#player26(src='assets/sounds/afi-tepetate_mixteco.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Aproximante labiodental', onclick="document.getElementById('player26').play()") &#x28B;
+                td
+                td
+                td
+                td
+                  audio#player86(src='assets/sounds/yoruba-aproximante.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Aproximante alveolar', onclick="document.getElementById('player86').play()") ɹ
+                td
+                td
+                td
+                td ɻ
+                td
+                td
+                  audio#player53(src='assets/sounds/cerdo-popoluca.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Aproximante palatal sonora', onclick="document.getElementById('player53').play()") j
+                td
+                td ɰ
+                td
+                td
+                td
+                td
+                td
+                td
+                //- Fin de Aproximante
+
+                //- Inicio de Aproximante lateral
+              tr.bg-white.border-b
+                td.px-6.py-4.whitespace-nowrap.text-sm.font-medium.text-gray-900 Aproximante lateral
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                td
+                  audio#player55(src='assets/sounds/l_de_pequeno.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block  sm:w-auto simbol")(type='button', title='Aproximante lateral alveolar sonora', onclick="document.getElementById('player55').play()") l
+                td
+                td
+                td
+                td
+                  a ɭ
+                td
+                td
+                  //- audio#player56(src='assets/sounds/ayate-ocuilteco.wav')
+                  //- button(class="rounded py-2 px-3indigo-sky-600 hoverindigo-sky-700mdext-sm font-bold text-center text-white uppercase mt-1 inline-block  sm:w-auto")(type='button', title='Aproximante lateral palatal sonora', onclick="document.getElementById('player56').play()") ʎ
+                  a ʎ
+                  
+                td
+                td
+                  audio#player57(src='assets/sounds/piel-de-persona-chinanteco.wav')
+                  button(class="rounded py-2 px-3 bg-indigo-600 hover:bg-indigo-700 text-md font-bold text-center text-white mt-1 inline-block sm:w-auto simbol")(type='button', title='Aproximante lateral velar sonora', onclick="document.getElementById('player57').play()") ʟ
+                td
+                td
+                td
+                td
+                td
+                td
+                //- Fin de Aproximante lateral
+        div.font-regular.relative.mb-4.block.w-full.rounded-lg.bg-gray-300.p-4.text-base.leading-5.text-black.mt-10 [ ʙ ѵ ] Cortesia del Profesor Didier Demolin
+
+
+block scripts
+  script(src="/js/plays.js")

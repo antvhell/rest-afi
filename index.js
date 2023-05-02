@@ -4,6 +4,11 @@ import cookieParser from "cookie-parser";
 
 import usuarioRoute from "./routes/usuarioRoutes.js";
 import propiedadesRoutes from "./routes/propiedadesRoutes.js";
+import homeRoutes from "./routes/homeRoutes.js";
+import afiRoutes from "./routes/afiRoutes.js";
+import foneticaRoutes from "./routes/foneticaRoutes.js";
+import acusticaRoutes from "./routes/acusticaRoutes.js";
+import obrasRoutes from "./routes/obrasRoutes.js";
 
 import db from "./config/db.js";
 //Crear la app
@@ -37,6 +42,11 @@ app.use(express.static("public"));
 //Routing
 app.use("/auth", usuarioRoute);
 app.use("/", propiedadesRoutes);
+app.use("/", homeRoutes);
+app.use("/afi", afiRoutes);
+app.use("/fonetica-articulatoria", foneticaRoutes);
+app.use("/", acusticaRoutes);
+app.use("/", obrasRoutes);
 
 //Definir un puerto y arrancar el proyecto
 const port = process.env.PORT || 3000;
